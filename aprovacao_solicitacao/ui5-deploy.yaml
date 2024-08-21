@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: vicente.desafio5p.aprovacaosolicitacao
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: S4_HANA
+          url: http://lnl-s4h.opustech.com.br:8000
+        app:
+          name: ZBSP_SOL_PRE398
+          description: Aprovação da Solicitação de preço
+          package: zdesafio_5p_vicente
+          transport: S4HK905177
+        exclude:
+          - /test/
