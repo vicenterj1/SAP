@@ -104,24 +104,49 @@
         "viewPath": "vicente.desafio5p.aprovacaosolicitacao.view",
         "controlAggregation": "pages",
         "controlId": "app",
-        "clearControlAggregation": false
+        "clearControlAggregation": false,
+        "bypassed": {
+          "target": [
+            "notFound"
+          ]
+        }
       },
       "routes": [
         {
-          "name": "RouteWorklist",
-          "pattern": ":?query:",
+          "pattern": "",
+          "name": "worklist",
           "target": [
-            "TargetWorklist"
+            "worklist"
+          ]
+        },
+        {
+          "pattern": "SolicitacaoSet/{objectId}",
+          "name": "object",
+          "target": [
+            "object"
           ]
         }
       ],
       "targets": {
-        "TargetWorklist": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "Worklist",
-          "viewName": "Worklist"
+        "worklist": {
+          "viewName": "Worklist",
+          "viewId": "worklist",
+          "viewLevel": 1,
+          "title": "{i18n>worklistViewTitle}"
+        },
+        "object": {
+          "viewName": "Object",
+          "viewId": "object",
+          "viewLevel": 2,
+          "title": "{i18n>objectViewTitle}"
+        },
+        "objectNotFound": {
+          "viewName": "ObjectNotFound",
+          "viewId": "objectNotFound"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
         }
       }
     },

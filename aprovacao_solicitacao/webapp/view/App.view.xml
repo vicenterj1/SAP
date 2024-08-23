@@ -1,7 +1,14 @@
-<mvc:View controllerName="vicente.desafio5p.aprovacaosolicitacao.controller.App"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View 
+    controllerName="vicente.desafio5p.aprovacaosolicitacao.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc" 
     xmlns="sap.m">
-    <App id="app">
-    </App>
+    
+    <Shell id="_IDGenShell1">
+        <App
+            id="app"
+            busy="{appView>/busy}"
+            busyIndicatorDelay="{appView>/delay}"/>
+    </Shell>
+
 </mvc:View>
