@@ -18,8 +18,8 @@ builder:
           url: http://lnl-s4h.opustech.com.br:8000
         app:
           name: ZBSP_SOL_PRE398
-          description: Aprovação da Solicitação de preço
-          package: zdesafio_5p_vicente
+          description: Aprovação da solicitação de preço - VICENTE
+          package: ZDESAFIO_5P_VICENTE
           transport: S4HK905177
         exclude:
           - /test/

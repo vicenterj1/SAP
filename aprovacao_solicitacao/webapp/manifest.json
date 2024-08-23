@@ -1,5 +1,5 @@
 {
-  "_version": "1.28.0",
+  "_version": "1.42.0",
   "sap.app": {
     "id": "vicente.desafio5p.aprovacaosolicitacao",
     "type": "application",
@@ -12,8 +12,8 @@
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
-      "version": "1.14.3",
-      "toolsId": "86eba378-9dd9-4080-b04c-8d2b187b2f49"
+      "version": "1.14.4",
+      "toolsId": "99c0c5e0-1573-4bfb-8df0-89307ce1fa46"
     },
     "dataSources": {
       "mainService": {
@@ -23,6 +23,20 @@
           "annotations": [],
           "localUri": "localService/metadata.xml",
           "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "AprovacaoVICENTE-managed": {
+          "semanticObject": "AprovacaoVICENTE",
+          "action": "managed",
+          "title": "{{flpTitle}}",
+          "subTitle": "{{flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
         }
       }
     }
@@ -46,7 +60,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.84.33",
+      "minUI5Version": "1.102.2",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -86,53 +100,28 @@
       "config": {
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
+        "async": true,
         "viewPath": "vicente.desafio5p.aprovacaosolicitacao.view",
         "controlAggregation": "pages",
         "controlId": "app",
-        "clearControlAggregation": false,
-        "bypassed": {
-          "target": [
-            "notFound"
-          ]
-        },
-        "async": true
+        "clearControlAggregation": false
       },
       "routes": [
         {
-          "pattern": "",
-          "name": "worklist",
+          "name": "RouteWorklist",
+          "pattern": ":?query:",
           "target": [
-            "worklist"
-          ]
-        },
-        {
-          "pattern": "SolicitacaoSet/{objectId}",
-          "name": "object",
-          "target": [
-            "object"
+            "TargetWorklist"
           ]
         }
       ],
       "targets": {
-        "worklist": {
-          "viewName": "Worklist",
-          "viewId": "worklist",
-          "viewLevel": 1,
-          "title": "{i18n>worklistViewTitle}"
-        },
-        "object": {
-          "viewName": "Object",
-          "viewId": "object",
-          "viewLevel": 2,
-          "title": "{i18n>objectViewTitle}"
-        },
-        "objectNotFound": {
-          "viewName": "ObjectNotFound",
-          "viewId": "objectNotFound"
-        },
-        "notFound": {
-          "viewName": "NotFound",
-          "viewId": "notFound"
+        "TargetWorklist": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Worklist",
+          "viewName": "Worklist"
         }
       }
     },

@@ -39,7 +39,7 @@ sap.ui.define([
 							"tiles": [{
 								"tileType": "sap.ushell.ui.tile.StaticTile",
 								"properties": {
-									"title": "Ação Urgente - VICENTE",
+									"title": "Ação Urgente - VICENTE - TITTLE",
 									"targetURL": "#vicentedesafio5paprovacaosolicitacao-display"
 								}
 							}]
@@ -54,8 +54,8 @@ sap.ui.define([
 							"vicentedesafio5paprovacaosolicitacao-display": {
 								"semanticObject": "vicentedesafio5paprovacaosolicitacao",
 								"action": "display",
-								"description": "Ação Urgente - descrição - VICENTE ",
-								"title": "Ação Urgente - VICENTE",
+								"description": "Ação Urgente - VICENTE - description",
+								"title": "Ação Urgente - VICENTE - TITTLE",
 								"signature": {
 									"parameters": {}
 								},

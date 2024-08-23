@@ -18,6 +18,8 @@ server:
         backend:
           - path: /sap
             url: http://lnl-s4h.opustech.com.br:8000
+            client: '200'
+            destination: S4_HANA
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -28,4 +30,4 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         component: vicente.desafio5p.aprovacaosolicitacao
-        ui5Theme: sap_fiori_3
+        ui5Theme: sap_horizon

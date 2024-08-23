@@ -1,25 +1,25 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Mon Aug 19 2024 20:02:47 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Fri Aug 23 2024 17:34:12 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori-freestyle|
 |**App Generator Version**<br>1.14.4|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>simple|
-|**Service Type**<br>OData Url|
+|**Service Type**<br>SAP System (ABAP On Premise)|
 |**Service URL**<br>http://lnl-s4h.opustech.com.br:8000/sap/opu/odata/sap/ZSUPERMERCADO_CV_SRV_01|
 |**Module Name**<br>aprovacao_solicitacao|
-|**Application Title**<br>Ação Urgente - VICENTE|
+|**Application Title**<br>Ação Urgente - VICENTE - TITTLE|
 |**Namespace**<br>vicente.desafio5p|
-|**UI5 Theme**<br>sap_fiori_3|
-|**UI5 Version**<br>1.84.33|
+|**UI5 Theme**<br>sap_horizon|
+|**UI5 Version**<br>1.102.2|
 |**Enable Code Assist Libraries**<br>False|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
 
 ## aprovacao_solicitacao
 
-Ação Urgente - descrição - VICENTE 
+Ação Urgente - VICENTE - description
 
 ### Starting the generated app
 
