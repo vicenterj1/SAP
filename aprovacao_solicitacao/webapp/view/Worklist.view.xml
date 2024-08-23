@@ -1,7 +1,109 @@
 <mvc:View controllerName="vicente.desafio5p.aprovacaosolicitacao.controller.Worklist"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+ xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+    <Page id="_IDGenPage1" title="{i18n>title}">
+
+         <semantic:SemanticPage
+        id="_IDGenSemanticPage1"
+        showFooter="true"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false">
+
+        <semantic:content>
+            <Table
+                id="table"
+                mode="MultiSelect"
+                width="auto"
+                items="{
+                    path: '/SolicitacaoSet',
+                    sorter: {
+                        path: 'Material',
+                        descending: false
+                    },
+                    parameters:{
+                        expand:'toMaterial,toPreco'
+                    }
+                }"
+                noDataText="{worklistView>/tableNoDataText}"
+                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                growing="true"
+                growingScrollToLoad="true"
+                updateFinished=".onUpdateFinished">
+
+                <headerToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1">
+                        <Title
+                            id="tableHeader"
+                            text="{worklistView>/worklistTableTitle}"
+                            level="H3"/>
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        <SearchField
+                            id="searchField"
+                            tooltip="{i18n>worklistSearchTooltip}"
+                            search=".onSearch">
+                            <layoutData>
+                                <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1"
+                                    maxWidth="200px"
+                                    priority="NeverOverflow"/>
+                            </layoutData>
+                        </SearchField>
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText1" text="ID"/>
+                    </Column>
+                    <Column id="_IDGenColumn2" hAlign="Begin">
+                        <Text id="_IDGenText2" text="Material" />
+                    </Column>
+                     <Column id="_IDGenColumn3" hAlign="End">
+                        <Text id="_IDGenText3" text="Preço Atual" />
+                    </Column>
+                    <Column id="_IDGenColumn4" hAlign="End">
+                        <Text id="_IDGenText4" text="Preço Novo" />
+                    </Column>
+                      <Column id="_IDGenColumn5" hAlign="End">
+                        <Text id="_IDGenText5" text="Data" />
+                    </Column>
+                      <Column id="_IDGenColumn6" hAlign="End">
+                        <Text id="_IDGenText6" text="Hora" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1"
+                        type="Navigation"
+                        press=".onPress">
+                        <cells>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier1"
+                                title="{Id}"/>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier2"
+                                title="{Material}" text="{toMaterial/Descricao} ({toMaterial/CodigoExterno})" />
+                            <Text id="_IDGenText7" text="{toPreco/Valor}"/>
+                            <Text id="_IDGenText8" text="{PrecoNovo}"/>
+                            <Text id="_IDGenText9" text="{path:'DataSolicitacao',type: 'sap.ui.model.type.Date',formatOptions: {
+                                style: 'medium'
+                            }}"/>
+                           <Text id="_IDGenText10" text="{path:'HoraSolicitacao',type: 'sap.ui.model.odata.type.Time'}"/>
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+        </semantic:content>
+
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
+
+        <semantic:footerCustomActions>
+            <Button id="_IDGenButton1" text="Rejeitar" press="onRejeitar"/>
+            <Button id="_IDGenButton2" text="Aprovar" press="onAprovar"/>
+        </semantic:footerCustomActions>
+        
+    </semantic:SemanticPage>        
     </Page>
 </mvc:View>
