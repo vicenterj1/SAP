@@ -113,8 +113,8 @@
       },
       "routes": [
         {
-          "pattern": "",
-          "name": "worklist",
+          "pattern": ":?query:",
+          "name": "RouteWorklist",
           "target": [
             "worklist"
           ]
@@ -132,6 +132,8 @@
           "viewName": "Worklist",
           "viewId": "worklist",
           "viewLevel": 1,
+          
+          "viewType": "XML",
           "title": "{i18n>worklistViewTitle}"
         },
         "object": {

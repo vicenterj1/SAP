@@ -34,6 +34,7 @@ sap.ui.define([
             });
             this.setModel(oViewModel, "worklistView");
 
+
         },
 
         /* =========================================================== */
@@ -157,9 +158,12 @@ sap.ui.define([
             } else {
                 var aTableSearchState = [];
                 var sQuery = oEvent.getParameter("query");
+                alert(sQuery);
 
                 if (sQuery && sQuery.length > 0) {
+                    alert(FilterOperator.Contains)
                     aTableSearchState = [new Filter("Material", FilterOperator.Contains, sQuery)];
+                    
                 }
                 this._applySearch(aTableSearchState);
             }

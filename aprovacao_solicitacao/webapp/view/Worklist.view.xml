@@ -23,13 +23,31 @@
                 id="table"
                 mode="MultiSelect"
                 width="auto"
+                items="{ 
+                        path:'/SolicitaoSet',
+                        sorter:{
+                            path:'Material',
+                            descending: false
+                              }
+                         }"
             >
             <headerToolbar>
                 <OverflowToolbar id="_IDGenOverflowToolbar1" >
                     <Title 
                         id="tableHeader"
                         text="{worklistView>/worklistTableTitle}"
-                    ></Title>
+                        level="H3"/>
+                    <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                    <SearchField 
+                        id="searchField"
+                        tooltip="{i18n>worklistSearchTooltip}"
+                        search=".onSearch">
+                        <layoutData>
+                            <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" 
+                                maxWidth="200px"
+                                priority="NeverOverflow"/>
+                        </layoutData>
+                   </SearchField>
                 </OverflowToolbar>
             </headerToolbar>
 
@@ -60,17 +78,9 @@
                         press=".onPress">
                         <cells>
                             <ObjectIdentifier id="_IDGenObjectIdentifier1"
-                                title="{Id}"/>
-                            <ObjectIdentifier id="_IDGenObjectIdentifier2"
-                                title="{Material}" text="{toMaterial/Descricao} ({toMaterial/CodigoExterno})" />
-                            <Text id="_IDGenText7" text="{toPreco/Valor}"/>
-                            <Text id="_IDGenText8" text="{PrecoNovo}"/>
-                            <Text id="_IDGenText9" text="{path:'DataSolicitacao',type: 'sap.ui.model.type.Date',formatOptions: {
-                                style: 'medium'
-                            }}"/>
-                           <Text id="_IDGenText10" text="{path:'HoraSolicitacao',type: 'sap.ui.model.odata.type.Time'}"/>
-
-                        </cells>
+                                title="{Id}">
+                            </ObjectIdentifier>
+                           </cells>
                     </ColumnListItem>
                 </items>
             </Table>
