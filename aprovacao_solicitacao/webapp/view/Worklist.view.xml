@@ -24,7 +24,7 @@
                 mode="MultiSelect"
                 width="auto"
                 items="{ 
-                        path:'/SolicitaoSet',
+                        path:'/SolicitacaoSet',
                         sorter:{
                             path:'Material',
                             descending: false
@@ -80,7 +80,7 @@
                             <ObjectIdentifier id="_IDGenObjectIdentifier1"
                                 title="{Id}">
                             </ObjectIdentifier>
-                           </cells>
+                        </cells>
                     </ColumnListItem>
                 </items>
             </Table>
