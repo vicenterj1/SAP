@@ -6,7 +6,7 @@
     >
 
     <semantic:SemanticPage 
-        id="page"
+        id="_IDPage"
         showFooter="true"
         headerPinnable="false"
         toggleHeaderOnTitleClick="false">
@@ -77,9 +77,18 @@
                         type="Navigation"
                         press=".onPress">
                         <cells>
-                            <ObjectIdentifier id="_IDGenObjectIdentifier1"
-                                title="{Id}">
-                            </ObjectIdentifier>
+                            <ObjectIdentifier id="_IDGenObjectIdentifier1" title="{Id}" />
+                            <ObjectIdentifier id="_IDGenObjectIdentifier2" title="{Material}" />
+                            <Text id="_IDGenText7" text="" />
+                            <Text id="_IDGenText8" text="" />
+                            <Text id="_IDGenText9" text="{path: 'DataSolicitacao',
+                                                          type: 'sap.ui.model.type.Date',
+                                                          formatOptions: {
+                                                                style : 'short'
+                                                                }}" />
+                            <Text id="_IDGenText10" text="{path: 'HoraSolicitacao',
+                                                           type: 'sap.ui.model.odata.type.Time'}" />
+                            
                         </cells>
                     </ColumnListItem>
                 </items>
