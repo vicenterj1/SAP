@@ -28,8 +28,11 @@
                         sorter:{
                             path:'Material',
                             descending: false
-                              }
-                         }"
+                              },
+                        parameters: {
+                            expand: 'toMaterial,toPreco'
+                            }
+                        }"
             >
             <headerToolbar>
                 <OverflowToolbar id="_IDGenOverflowToolbar1" >
@@ -78,8 +81,10 @@
                         press=".onPress">
                         <cells>
                             <ObjectIdentifier id="_IDGenObjectIdentifier1" title="{Id}" />
-                            <ObjectIdentifier id="_IDGenObjectIdentifier2" title="{Material}" />
-                            <Text id="_IDGenText7" text="" />
+                            <ObjectIdentifier id="_IDGenObjectIdentifier2" title="{Material}" 
+                                                                            text="{toMaterial/Descricao}"
+                                                                            />
+                            <Text id="_IDGenText7" text="{toPreco/Valor}" />
                             <Text id="_IDGenText8" text="" />
                             <Text id="_IDGenText9" text="{path: 'DataSolicitacao',
                                                           type: 'sap.ui.model.type.Date',
